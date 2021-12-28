@@ -29,9 +29,9 @@ struct ReturnObject {
 
 ReturnObject<unsigned long long> getNextFib()
 {
-    auto prev = (unsigned long long)0;
-    auto value = (unsigned long long)1;
-    for (int i = 0;; ++i)
+    auto prev = static_cast<unsigned long long>(0);
+    auto value = static_cast<unsigned long long>(1);
+    while (true)
     {
         co_yield value;            // starts at 1
         auto temp = value + prev;
